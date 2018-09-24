@@ -2,24 +2,19 @@
 <html>
 	<head>
 		<title>Henry Fok</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script src="js/skel.min.js"></script>
-		<script src="js/init.js"></script>
-		<script src="semantic/dist/semantic.min.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-wide.css" />
-			<link rel="stylesheet" href="css/style-noscript.css" />
-			<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-		</noscript>
-		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="loading">
+	<body class="is-preload">
 		<div id="wrapper">
 			<div id="bg"></div>
 			<div id="overlay"></div>
@@ -31,11 +26,12 @@
 						<p>Simon Fraser University Alumni &nbsp;&bull;&nbsp; Computer Science</p>
 						<nav>
 							<ul>
-								<!-- <li><a href="https://www.facebook.com/h3nry.fok" target="_blank" class="fa fa-facebook"><span>Facebook</span></a></li> -->
-								<li><a href="https://twitter.com/henry_fok" target="_blank" class="fa fa-twitter"><span>Twitter</span></a></li>
-								<li><a href="about.html" class="fa fa-home"><span>Home</span></a></li>
-								<li><a href="http://www.linkedin.com/in/henryfok95" target="_blank" class="fa fa-linkedin"><span>LinkedIn</span></a></li>
-								<!-- <li><a href="https://plus.google.com/u/0/102975446386761472199/" target="_blank" class="fa fa-google-plus"><span>Google</span></a></li> -->
+								<li><a href="https://www.facebook.com/h3nry.fok" target="_blank" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="https://twitter.com/henry_fok" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="about/about.html" class="fa fa-home"><span>Home</span></a></li>
+								<li><a href="https://github.com/henryfok" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+								<li><a href="https://www.linkedin.com/in/henryfok95" target="_blank" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<!-- <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li> -->
 							</ul>
 						</nav>
 					</header>
@@ -44,8 +40,13 @@
 					<footer id="footer">
 						<span class="copyright">&copy; Henry Fok</span>
 					</footer>
-				
+
 			</div>
 		</div>
+		<script>
+			window.onload = function() { document.body.classList.remove('is-preload'); }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
 	</body>
 </html>
