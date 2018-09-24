@@ -1,14 +1,12 @@
+<!DOCTYPE HTML>
 <html>
 	<head>
 		<title>About me</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
-	<body>
+	<body class="is-preload">
 
 		<!-- Header -->
 			<div id="header">
@@ -24,24 +22,11 @@
 
 					<!-- Nav -->
 						<nav id="nav">
-							<!--
-
-								Prologue's nav expects links in one of two formats:
-
-								1. Hash link (scrolls to a different section within the page)
-
-								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
-
-								2. Standard link (sends the user to another page/site)
-
-								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
-
-							-->
 							<ul>
-								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
-								<!-- <li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li> -->
-								<!-- <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li> -->
+								<li><a href="#top" id="top-link"><span class="icon fa-home">Intro</span></a></li>
+								<li><a href="#portfolio" id="portfolio-link"><span class="icon fa-th">Portfolio</span></a></li>
+								<!-- <li><a href="#about" id="about-link"><span class="icon fa-user">About Me</span></a></li>
+								<li><a href="#contact" id="contact-link"><span class="icon fa-envelope">Contact</span></a></li> -->
 							</ul>
 						</nav>
 
@@ -78,7 +63,7 @@
 							</header>
 
 							<footer>
-								<a href="#portfolio" class="button scrolly">Click me</a>
+								<!-- <a href="#portfolio" class="button scrolly">Magna Aliquam</a> -->
 							</footer>
 
 						</div>
@@ -95,7 +80,7 @@
 							<p>Interesting projects I worked on during my undergraduate life at Simon Fraser University.</p>
 
 							<div class="row">
-								<div class="4u 12u$(mobile)">
+								<div class="col-4 col-12-mobile">
 									<article class="item">
 										<a href="portfolio/myexperience_mockup/myExperience.pdf" target="_blank" class="image fit"><img src="portfolio/myexperience_mockup/mockup_animation_480p.gif" alt="" /></a>
 										<header>
@@ -109,7 +94,7 @@
 										</header>
 									</article> -->
 								</div>
-								<div class="4u 12u$(mobile)">
+								<div class="col-4 col-12-mobile">
 									<article class="item">
 										<a href="https://github.com/henryfok/Tank-Game" target="_blank" class="image fit"><img src="portfolio/tank_game/tank_gameplay.gif" alt="" /></a>
 										<header>
@@ -123,7 +108,7 @@
 										</header>
 									</article> -->
 								</div>
-								<div class="4u$ 12u$(mobile)">
+								<div class="col-4 col-12-mobile">
 									<article class="item">
 										<a href="https://github.com/henryfok/CS-Teclog" target="_blank" class="image fit"><img src="portfolio/cs_teclog/cs_teclog_480p.gif" alt="" /></a>
 										<header>
@@ -150,7 +135,7 @@
 								<h2>About Me</h2>
 							</header>
 
-							<a href="#" class="image featured"><img src="images/resume.png" alt="" /></a>
+							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
 
 							<p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus
 							ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae
@@ -177,12 +162,12 @@
 
 							<form method="post" action="#">
 								<div class="row">
-									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
-									<div class="12u$">
+									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="col-12">
 										<textarea name="message" placeholder="Message"></textarea>
 									</div>
-									<div class="12u$">
+									<div class="col-12">
 										<input type="submit" value="Send Message" />
 									</div>
 								</div>
@@ -206,10 +191,10 @@
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollzer.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
 	</body>
