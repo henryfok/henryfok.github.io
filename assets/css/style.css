@@ -683,6 +683,15 @@ ul.about-service li {
     background-size: cover;
     padding: 100px;
 }
+.service-icon#code{
+    background: url(../images/code.jpg);
+}
+.service-icon#web{
+    background: url(../images/web.jpg);
+}
+.service-icon#server{
+    background: url(../images/server.jpg);
+}
 .service-icon i {
     font-size: 50px;
     color: #fff;
