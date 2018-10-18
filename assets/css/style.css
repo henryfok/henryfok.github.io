@@ -673,6 +673,11 @@ ul.about-service li {
     background: #fff;
     box-shadow: 0px 0px 35px rgba(0, 0, 0, .07);
 }
+
+.single-service.btmMargin {
+    margin-bottom: 30px;
+}
+
 .service-image{
     background: url(../images/service-bg.jpg);
     background-size: cover;
