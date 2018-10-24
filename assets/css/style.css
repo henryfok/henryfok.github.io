@@ -7,13 +7,10 @@
 * 04.ABOUT CSS STYLE
 * 05.SERVICE CSS STYLE
 * 06.PORTFOLIO CSS STYLE
-* 07.TESTIMONIAL CSS STYLE
 * 08.BLOG CSS STYLE
 * 09.CONTACT DETAILS CSS STYLE
 * 10.CONTACT DESIGN AREA
 * 11.FOOTER CSS STYLE
-* 12.COMPANY LOGO CSS STYLE
-* 13.CALL TO ACTION CSS STYLE
 * ----------------------------------------------------------------------------------------
 */
 
@@ -341,6 +338,7 @@ fieldset {
 	height: 100%;
 	background: url(../images/bg.jpg);
 	background-size: cover;
+	background-position: center;
 	z-index: 1;
 }
 
@@ -577,7 +575,6 @@ fieldset {
 	color: #fff;
 }
 
-
 /*
 * ----------------------------------------------------------------------------------------
 * 04.ABOUT CSS STYLE
@@ -593,17 +590,18 @@ fieldset {
 }
 
 .about-me-right h2 {
-	/*text-transform: capitalize;*/
 	font-weight: 400;
 	margin-bottom: 30px;
 	font-size: 40px;
 	color: #fff;
 }
+
 ul.about-service{
 	padding: 0;
 	margin: 0;
 	margin-bottom: 50px;
 }
+
 ul.about-service li {
 	display: inline-block;
 	border: 1px solid #f1f1f1;
@@ -612,11 +610,13 @@ ul.about-service li {
 	font-size: 12px;
 	color: #f1f1f1;
 }
+
 .about-me-right p {
 	margin-bottom: 20px;
 	color: #f1f1f1;
 	font-weight: 300;
 }
+
 .about-me-right h3 {
 	margin-bottom: 50px;
 	color: #f1f1f1;
@@ -678,30 +678,33 @@ ul.about-service li {
 	margin-bottom: 30px;
 }
 
-.service-image{
+.service-image {
 	background: url(../images/service-bg.jpg);
 	background-size: cover;
 	padding: 0px 0px 1px;
 }
-.service-icon{
+.service-icon {
 	background: url(../images/service-bg.jpg);
 	background-size: cover;
 	padding: 100px;
 }
-.service-icon#code{
+.service-icon#code {
 	background: url(../images/code.jpg);
+	/*background-size: cover;*/
 }
-.service-icon#web{
+.service-icon#web {
 	background: url(../images/web.jpg);
+	/*background-size: cover;*/
 }
-.service-icon#server{
+.service-icon#server {
 	background: url(../images/server.jpg);
+	background-size: cover;
 }
 .service-icon i {
 	font-size: 50px;
 	color: #fff;
 }
-.service-description{
+.service-description {
 	padding: 30px;
 }
 .single-service h2 {
@@ -710,7 +713,7 @@ ul.about-service li {
 	margin: 20px 0px;
 	-webkit-transition: .3s;
 	transition: .3s;
-	color: #000;
+	/*color: #000;*/
 	font-weight: 700;
 }
 
@@ -719,170 +722,9 @@ ul.about-service li {
 	font-size: 16px;
 }
 
-
-
-
-/*
-* ----------------------------------------------------------------------------------------
-* 06.WORK CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
-
-.work {
-	background: #000;
-}
-
-.work-inner .mix {
-	display: none;
-}
-
-ul.work {
-	padding: 0;
-	list-style: none;
-	text-align: center;
-	margin-bottom: 30px;
-}
-
-ul.work li {
-	display: inline-block;
-	padding-bottom: 4px;
-	margin: 0 8px;
-	text-transform: uppercase;
-	font-size: 14px;
-	font-weight: 700;
-	color: #938d8d;
-	border: none;
-	cursor: pointer;
-	font-size: 12px;
-	border-bottom: 2px solid transparent;
-}
-
-ul.work li:hover {
-	color: #000;
-	-webkit-transition: .3s;
-	transition: .3s;
-}
-
-ul.work li.active {
-	color: #000;
-}
-
-.work .item {
-	padding: 0;
-	margin: 0;
-}
-
-.work .col-md-4 {
-	padding: 0;
-	margin: 0;
-}
-
-.work figure.effect-ruby img {
-	height: auto;
-	width: 100%;
-}
-
-.work .grid figure {
-	position: relative;
-	float: left;
-	overflow: hidden;
-	width: 100%;
-	height: auto;
-	text-align: center;
-	cursor: pointer;
-	padding: 0;
-	margin: 0;
-}
-
-.work .grid figure:hover {
-	background: #000;
-}
-
-.work figure.effect-ruby h2 {
-	margin-top: 94%;
-	opacity: 0;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	font-size: 30px;
-	text-transform: capitalize;
-	font-weight: 300;
-	-webkit-transition: .3s;
-	transition: .3s;
-	display: inline-block;
-	color: #fff;
-}
-
-.work figure.effect-ruby p {
-	font-size: 14px;
-	text-transform: capitalize;
-	border: none;
-	padding: 0;
-	margin: 5px 0px;
-}
-
-.work figure.effect-ruby p strong {
-	font-size: 16px;
-	text-transform: uppercase;
-	margin-right: 5px;
-}
-
-.work .item:hover figure.effect-ruby h2 {
-	opacity: 1;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-	-webkit-transition: .3s;
-	transition: .3s;
-}
-
-.work .owl-theme .owl-controls .owl-page span {
-	display: block;
-	width: 15px;
-	height: 15px;
-	margin: 5px 7px;
-	border-radius: 20px;
-	background: transparent;
-	border: 1px solid #fff;
-}
-
-/*
-* ----------------------------------------------------------------------------------------
-* 07.TESTIMONIAL CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
-
-.testimonial-area {
-	background: #0F1113;
-}
-
-
-.single-testi-des,
-.testi-name {
-	text-align: center;
-
-}
-.single-testi-des{
-	padding: 0px 50px;
-}
-.single-testi-des p {
-	font-size: 20px;
-	line-height: 32px;
-	color: #f1f1f1;
-	margin-bottom: 40px;
-}
-
-.single-testi-des p span{
-	font-weight: 700;
-	margin-right: 10px;
-}
-
-
-.testimonial-area .owl-theme .owl-controls .owl-page span {
-	display: block;
-	width: 15px;
-	height: 15px;
-	margin: 5px 7px;
-	border-radius: 20px;
-	background: transparent;
-	border: 1px solid #fff;
-}
+/*.single-service a {
+	color: blue;
+}*/
 
 /*
 * ----------------------------------------------------------------------------------------
@@ -946,8 +788,6 @@ ul.work li.active {
 	border: 1px solid #fff;
 }
 
-
-
 /*
 * ----------------------------------------------------------------------------------------
 * 10.CONTACT CSS STYLE
@@ -991,15 +831,15 @@ ul.work li.active {
 	text-transform: capitalize;
 	font-size: 14px;
 	border: 1px solid #000;
-	background-color: #f1f1f1;
+	background-color: #fff;
 	font-weight: 600;
 	width: 200px;
 	margin-bottom: 0;
 }
 
 .contact-form button:hover {
-	color: #f1f1f1;
-	border: 1px solid #f1f1f1;
+	color: #fff;
+	border: 1px solid #fff;
 	background: #000;
 	-webkit-transition: .3s;
 	transition: .3s;
@@ -1064,63 +904,4 @@ ul.work li.active {
 	color: #f7f7f7;
 	margin-bottom: 0;
 	text-align: right;
-}
-
-/*
-* ----------------------------------------------------------------------------------------
-* 12.COMPANY LOGO CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
-
-.company-logo-area {
-	background: #F2F4EC;
-}
-
-.single-company-logo {
-	text-align: center;
-	padding: 30px;
-	margin-right: 10px;
-}
-
-.single-company-logo img {
-	width: 130px;
-}
-
-
-/*
-* ----------------------------------------------------------------------------------------
-* 13.CALL TO ACTION CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
-
-.call-to-area {
-	background: url(../images/call-to-action.jpg);
-	background-size: cover;
-	padding: 140px 0px;
-	position: relative;
-	z-index: 1;
-}
-
-.call-to-area:after {
-	position: absolute;
-	background: rgba(0, 0, 0, .5);
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	content: "";
-	z-index: -1;
-}
-
-.call-to-area-text h2 {
-	color: #fff;
-	font-size: 40px;
-	text-transform: capitalize;
-	font-weight: 400;
-}
-
-.call-to-area-text p {
-	text-transform: capitalize;
-	color: #fff;
-	margin-bottom: 30px;
 }

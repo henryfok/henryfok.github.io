@@ -34,6 +34,7 @@
 	<link rel="stylesheet" href="assets/css/animate.min.css">
 	<!-- MAIN STYLE CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/prj-style.css">
 	<!-- RESPONSIVE CSS -->
 	<link rel="stylesheet" href="assets/css/responsive.css">
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -64,10 +65,10 @@
 		<div class="menu-item-wrap">
 			<div class="menu-item-inner">
 				<ul>
-					<li><a class="smoth-scroll" href="#home">Home</a></li>
-					<li><a class="smoth-scroll" href="#about">About me</a></li>
-					<li><a class="smoth-scroll" href="#skills">Technical skills</a></li>
-					<li><a class="smoth-scroll" href="#portfolio">Portfolio</a></li>
+					<li><a class="smoth-scroll" href="#cover">Cover</a></li>
+					<li><a class="smoth-scroll" href="#intro">Intro</a></li>
+					<li><a class="smoth-scroll" href="#tech">Technologies used</a></li>
+					<li><a class="smoth-scroll" href="#portfolio">Other projects</a></li>
 					<li><a class="smoth-scroll" href="#contact">Contact</a></li>
 				</ul>
 			</div>
@@ -86,13 +87,13 @@
 	<!-- / End of sidebar -->
 
 	<!-- / Start of homepage banner -->
-	<header id="home" class="welcome-area">
+	<header id="cover" class="welcome-area">
 		<div class="header-top-area">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-6">
 						<div class="logo">
-							<a href="#">
+							<a href="index.html">
 								<p>Henry Fok</p>
 							</a>
 						</div>
@@ -108,24 +109,16 @@
 			</div>
 		</div>
 		<div class="welcome-image-area" data-stellar-background-ratio="0.6">
-			<div id="particles-js"></div>
 			<div class="display-table">
 				<div class="display-table-cell">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
 								<div class="header-text text-center">
-									<h3>Hi there!</h3>
-									<h2 class="cd-headline clip is-full-width">
-										<span class="cd-words-wrapper">
-											<b class="is-visible">I'm Henry Fok</b>
-											<b>I'm a Developer</b>
-											<b>Comsci Major</b>
-											<b>SFU Alumni</b>
-										</span>
-									</h2>
+									<h2>Richmond Emmanuel Church</h2>
+									<h3>Rebuilding the website in WordPress</h3>
 									<div class="home-arrow-down">
-										<a href="#about" class="smoth-scroll btn"><i class="fa fa-angle-double-down"></i></a>
+										<a href="#intro" class="smoth-scroll btn"><i class="fa fa-angle-double-down"></i></a>
 									</div>
 								</div>
 
@@ -138,92 +131,110 @@
 	</header>
 	<!-- / End of homepage banner -->
 
-	<!-- Start of About Me  -->
-	<section id="about" class="about-me-area section-padding">
+	<!-- Start of Intro  -->
+	<section id="intro" class="about-me-area section-padding">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-7">
+				<div class="col-md-12"><!-- -md-7 -->
 					<div class="about-me-right">
-						<h2 class="wow fadeInUp" data-wow-delay="0.2s"> I am a recent <strong>computer science</strong> graduate from <a href="http://www.sfu.ca" target="_blank">Simon Fraser University</a>.</h2>
-						<ul class="about-service wow fadeInUp" data-wow-delay="0.4s">
-							<li>Developer</li>
-							<li>Tech Enthusiast</li>
-							<li>Gamer</li>
+						<h2>Moving <a href="https://richmondemmanuelchurch.org/">REC</a> into the modern age.</h2>
+						<ul class="about-service">
+							<li>WordPress</li>
+							<li>HTML</li>
+							<li>CSS</li>
 						</ul>
-						<p class="wow fadeInUp" data-wow-delay="0.6s">I am a developer based in Vancouver with a passion to overcome new obstacles and learn about new technologies.</p>
-						<p class="wow fadeInUp" data-wow-delay="0.8s">My most recent internship:</br><a href="https://www.sap.com/canada/index.html" target="_blank">SAP</a> as a Product Support Engineer.</p>
-					</div>
-				</div>
-				<div class="col-md-5">
-					<div class="about-me-left wow fadeInLeft" data-wow-delay="0.2s">
-						<img src="assets/images/me.JPG" alt="">
+						<p>I have been the sole developer for my <a href="https://richmondemmanuelchurch.org/">church’s website</a> since January 2017 when I was initially contracted to rebuild the entire site due to an aging design and user interface.</p>
 					</div>
 				</div>
 			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					
+					<div class="about-me-left">
+						<h2 class="steps">Before</h2>
+						<div class="owl-carousel">
+							<img src="portfolio/rec/old_home.png" alt="">
+							<img src="portfolio/rec/old_sermon.png" alt="">
+						</div>
+					</div>
+
+					<div class="about-me-right">
+						<p>I started this project by developing the <strong>WordPress</strong> site locally using <strong>MAMP</strong> which provided me a way to visually present new web page designs to the team for feedback while keeping the old website online. This is because my church only had one available server to host the website on and require the old site to be available until the new one had all of its core functionalities implemented and the entire team was ready to make the transition. Our team decided to purchase a WordPress theme called Church Suite which provided all the features we needed such as sermon and event management. The user interface for each web page was mainly created using the WPBakery plugin that provided a wide selection of web elements that I could easily drop into a design. The <strong>Chrome DevTools</strong> allowed me to ensure that the new designs were responsive on mobile devices and assist with creating custom <strong>HTML</strong> and <strong>CSS</strong> code to alter elements that did not have a user-friendly way to do so in WordPress.</p>
+					</div>
+
+					<h2 class="steps">Work in progress</h2>
+					<div class="owl-carousel">
+						<img src="portfolio/rec/sermon_progress.png" alt="">
+					</div>
+
+					<div class="about-me-right">
+						<p>When the team was ready to make the transition, the new designed was uploaded to the new server using FTP. I had to ensure the server was properly configured to support the new CMS by changing settings such as memory limits and execution time. Through the cPanel administration portal, I accessed the database that was created by WordPress to re-link the domain. One issue I encountered after the site went live was slow loading times. This was caused by large images file sizes due to the lack of image compression. I was able to identify this issue by monitoring network activity in Chrome DevTools and running a benchmark in <strong>GTmetrix</strong>, a website optimization tool which provided insight on different issues that could improve site loading times.</p>
+					</div>
+
+					<h2 class="steps">Current</h2>
+					<div class="owl-carousel">
+						<img src="portfolio/rec/new_homepage_banner_optimized.jpg" alt="">
+						<img src="portfolio/rec/sermons_optimized.jpg" alt="">
+						<img src="portfolio/rec/events_optimized.jpg" alt="">
+						<img src="portfolio/rec/media_page_optimized.jpg" alt="">
+					</div>
+
+				</div>
+			</div>
+
 		</div>
 	</section>
-	<!-- / End of About Me  -->
+	<!-- / End of Intro  -->
 
-	<!-- Start of Skills -->
-	<section id="skills" class="service-area section-padding">
+	<!-- Start of Tech -->
+	<section id="tech" class="service-area section-padding">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="section-title">
-						<h2>Technical Skills</h2>
+						<h2>Technologies Used</h2>
 					</div>
 				</div>
 			</div>
 			<div class="row" data-aos="fade-up">
 				<div class="col-md-4 col-sm-6">
 					<div class="single-service wow fadeInLeft" data-wow-delay="0.2s">
-						<div class="service-icon" id="code">
-							<i class="fas fa-code"></i>
+						<div class="service-icon" id="wp">
+							<!-- <i class="fas fa-code"></i> -->
 						</div>
 						<div class="service-description">
-							<h2>Programming</h2>
-							<ul>
-								<li>Java</li>
-								<li>C++</li>
-								<li>Linux</li>
-								<li>Python</li>
-							</ul>
+							<h2>WordPress</h2>
+							<h3>HTML/CSS</h3>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6">
 					<div class="single-service wow fadeInLeft" data-wow-delay="0.4s">
-						<div class="service-icon" id="web">
-							<i class="fas fa-columns"></i>
+						<div class="service-icon" id="mamp">
+							<!-- <i class="fas fa-columns"></i> -->
 						</div>
 						<div class="service-description">
-							<h2>Web Development</h2>
-							<ul>
-								<li>HTML, CSS, JS</li>
-								<li>Django</li>
-								<li>WordPress</li>
-							</ul>
+							<h2>MAMP</h2>
+							<h3>Local web development</h3>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6">
 					<div class="single-service wow fadeInLeft" data-wow-delay="0.6s">
-						<div class="service-icon" id="server">
-							<i class="fas fa-sitemap"></i>
+						<div class="service-icon" id="chrome">
+							<!-- <i class="fas fa-sitemap"></i> -->
 						</div>
 						<div class="service-description">
-							<h2>Databases & Networking</h2>
-							<ul>
-								<li>SQL</li>
-								<li>TCP, UDP, IP</li>
-							</ul>
+							<h2>Chrome DevTools</h2>
+							<h3>Page monitoring and debugging</h3>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- / End of Skills -->
+	<!-- / End of Tech -->
 
 	<!-- Start of Portfolio -->
 	<section id="portfolio" class="blog-area section-padding">
@@ -247,7 +258,7 @@
 							<a href="https://github.com/henryfok/CS-Teclog" target="_blank"><h4>GitHub</h4></a>
 						</div>
 					</div>
-					<div class="single-service btmMargin wow fadeInLeft" data-wow-delay="0.2s">
+					<div class="single-service wow fadeInLeft" data-wow-delay="0.2s">
 						<div class="service-image">
 							<img src="portfolio/move_planner_app/app_preview_480p.gif" alt="">
 						</div>
@@ -259,7 +270,7 @@
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6">
-					<div class="single-service btmMargin wow fadeInLeft" data-wow-delay="0.4s">
+					<div class="single-service wow fadeInLeft" data-wow-delay="0.4s">
 						<div class="service-image">
 							<img src="portfolio/tank_game/tank_gameplay.gif" alt="">
 						</div>
@@ -271,7 +282,7 @@
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6">
-					<div class="single-service btmMargin wow fadeInLeft" data-wow-delay="0.6s">
+					<div class="single-service wow fadeInLeft" data-wow-delay="0.6s">
 						<div class="service-image">
 							<img src="portfolio/myexperience_mockup/mockup_animation_480p.gif" alt="">
 						</div>
@@ -279,16 +290,6 @@
 							<h2>myExperience Usability Tested Mockups</h2>
 							<p>SFU co-op website prototype created in Balsamiq.</p>
 							<a href="portfolio/myexperience_mockup/myExperience.pdf" target="_blank"><h4>PDF with interactive links</h4></a>
-						</div>
-					</div>
-					<div class="single-service btmMargin wow fadeInLeft" data-wow-delay="0.6s">
-						<div class="service-image">
-							<img src="portfolio/rec/rec_animation_480p.gif" alt="">
-						</div>
-						<div class="service-description">
-							<a href="rec.html"><h2>Richmond Emmanuel Church</h2></a>
-							<p>Rebuilding the website in WordPress.</p>
-							<a href="https://richmondemmanuelchurch.org/" target="_blank"><h4>Current website</h4></a>
 						</div>
 					</div>
 				</div>
@@ -373,9 +374,9 @@
 	<!-- ANIMATION JS -->
 	<script src="assets/js/wow.min.js"></script>
 	<!-- PARTICLE JS -->
-	<script src="assets/js/particles.min.js"></script>
+	<!-- <script src="assets/js/particles.min.js"></script>
 	<script src="assets/js/app.js"></script>
-	<script src="assets/js/animated-text.js"></script>
+	<script src="assets/js/animated-text.js"></script> -->
 	<!-- scripts js -->
 	<script src="assets/js/scripts.js"></script>
 </body>

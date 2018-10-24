@@ -136,61 +136,30 @@
 
 		/*
 		 * ----------------------------------------------------------------------------------------
-		 *  TESTIMONIAL JS
+		 *  OWLCAROUSEL JS
 		 * ----------------------------------------------------------------------------------------
 		 */
 
-		$(".testimonial-list").owlCarousel({
+		$(document).ready(function(){
+			$(".owl-carousel").owlCarousel();
+		});
+
+		$(".owl-carousel").owlCarousel({
 			items: 1,
-			autoPlay: true,
-			navigation: false,
+			nav: true,
+			rewind: true,
+			dots: true,
+			autoplay: true,
+			autoplayTimeout: 2500,
+			autoplayHoverPause: true,
+			// autoplaySpeed: 100,
 			itemsDesktop: [1199, 1],
 			itemsDesktopSmall: [980, 1],
 			itemsTablet: [768, 1],
 			itemsTabletSmall: false,
 			itemsMobile: [479, 1],
-			pagination: true,
-			autoHeight: true,
-		});
-
-
-		/*
-		 * ----------------------------------------------------------------------------------------
-		 *  WORK JS
-		 * ----------------------------------------------------------------------------------------
-		 */
-
-		$(".work-posts").owlCarousel({
-			items: 3,
-			autoPlay: true,
-			navigation: false,
-			itemsDesktop: [1199, 3],
-			itemsDesktopSmall: [980, 2],
-			itemsTablet: [768, 2],
-			itemsTabletSmall: false,
-			itemsMobile: [479, 1],
-			pagination: true,
-			autoHeight: true,
-		});
-
-
-		/*
-		 * ----------------------------------------------------------------------------------------
-		 *  BLOG JS
-		 * ----------------------------------------------------------------------------------------
-		 */
-
-		$(".blog-list").owlCarousel({
-			items: 3,
-			autoPlay: true,
-			navigation: false,
-			itemsDesktop: [1199, 2],
-			itemsDesktopSmall: [980, 2],
-			itemsTablet: [768, 1],
-			itemsTabletSmall: false,
-			itemsMobile: [479, 1],
-			pagination: true,
-			autoHeight: true,
+			// pagination: true,
+			// autoHeight: true,
 		});
 
 

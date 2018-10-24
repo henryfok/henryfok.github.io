@@ -1,0 +1,29 @@
+.welcome-image-area {
+	position: relative;
+	height: 100%;
+	background: url(../../portfolio/rec/new_homepage_banner_optimized.jpg);
+	background-size: cover;
+	background-position: center;
+	z-index: 1;
+}
+
+.steps {
+	font-weight: 400;
+	font-size: 40px;
+	color: #fff;
+}
+
+.service-icon#wp {
+	background: url(../../portfolio/rec/wp.png);
+	background-size: cover;
+	background-position: center;
+}
+.service-icon#mamp {
+	background: url(../../portfolio/rec/mamp.png);
+	background-size: cover;
+	background-position: center;
+}
+.service-icon#chrome {
+	background: url(../../portfolio/rec/chrome_dev_tools.jpg);
+	background-size: cover;
+	background-position: center;
