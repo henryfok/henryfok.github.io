@@ -146,9 +146,9 @@
 
 		$(".owl-carousel").owlCarousel({
 			items: 1,
-			nav: true,
+			nav: false,
 			rewind: true,
-			dots: true,
+			dots: false,
 			autoplay: true,
 			autoplayTimeout: 2500,
 			autoplayHoverPause: true,
