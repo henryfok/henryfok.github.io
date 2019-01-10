@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pong</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<audio id="gameMusic">
+			<source src="snd/bit-rush.mp3" type="audio/mp3">
+			Your browser does not support the audio element.
+		</audio>
+
+		<div class="pong">
+			<div class="paddle paddle-player"></div>
+			<div class="paddle paddle-enemy"></div>
+			<div class="score score-player">0</div>
+			<div class="score score-enemy">0</div>
+			<div class="net"></div>
+			<div class="ball"></div>
+			<div class="menu">
+				<div class="menu-title">
+					<span class="menu-title-left">Po</span><span class="menu-title-right">ng</span>
+				</div>
+				<div class="menu-control">
+					<div class="control">
+						<div class="control-icon">▲ / W</div>
+						<div class="control-action">Up</div>
+					</div>
+					<div class="control">
+						<div class="control-icon">▼ / S</div>
+						<div class="control-action">Down</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.3/velocity.min.js"></script> -->
+		<script src="js/sketch.min.js"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js"></script> -->
+		<script src="js/sound.js"></script>
+		<script src="js/score.js"></script>
+		<script src="js/aabb.js"></script>
+		<script src="js/ball.js"></script>
+		<script src="js/particles.js"></script>
+		<script src="js/game.js"></script>
+	</body>
+</html>
