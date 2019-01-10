@@ -43,7 +43,7 @@ var paddleEnemy = {
 	speed: paddleSpeed,
 	moveUp: false,
 	moveDown: false,
-	difficulty: 0.4
+	difficulty: 0.5
 };
 
 function addEventListeners() {
@@ -122,10 +122,14 @@ function resetGame() {
 }
 
 var gameStarted = false;
+var musicStarted = false;
 
 function init() {
 	document.querySelector('.menu').style.visibility = 'visible';
-	playMusic();
+	if (!musicStarted) {
+		musicStarted = true;
+		playMusic();
+	}
 	gameStarted = false;
 	render();
 	window.addEventListener('keydown', function(keycode) {

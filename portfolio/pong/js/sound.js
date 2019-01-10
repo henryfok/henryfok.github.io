@@ -7,7 +7,22 @@ function playMusic() {
 	gameMusic.load();
 	gameMusic.volume = "0.5";
 	gameMusic.loop = true;
-	gameMusic.play();
+	
+	var playPromise = gameMusic.play();
+
+	if (playPromise !== undefined) {
+		playPromise.then( _ => {
+			gameMusic.play();
+		})
+		.catch(error => {
+			console.log('Sound error');
+			setTimeout(function() {
+				playMusic();
+			}, 1000);
+		});
+	}
+
+	
 }
 
 function lowerVolMusic() {
