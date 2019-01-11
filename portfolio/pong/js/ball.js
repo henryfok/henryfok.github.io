@@ -1,12 +1,9 @@
-// window size
-var gameWidth = 1280;
-var gameHeight = 720;
-
 // ball size and move speed
 var ballWidth = 30;
 var ballHeight = 30;
-var ballSpeedStart = 8;
+var ballSpeedStart = 10;
 var ballSpeed = ballSpeedStart;
+var ballTragSpeed = Math.sqrt(2 * (ballSpeed * ballSpeed));
 var ballRotateSpeed = 3;
 
 var ball = {
@@ -35,6 +32,7 @@ function startBall() {
 
 function moveBall() {
 	// move ball location diagonally
+	ballParticles.spawn(ball.x + ball.width/2, ball.y + ball.height/2);
 	ball.x += ball.vx;
 	ball.y += ball.vy;
 }
@@ -81,21 +79,56 @@ function containBall() {
 
 function checkCollisions() {
 	if (aabbCollisionDetect(ball, paddlePlayer)) {
-		ball.x = paddlePlayer.x + paddlePlayer.width;
-		ball.vx = -ball.vx;
-		ball.vr = -ball.vr;
+		paddlePlayer.hasHit = true;
+		paddleEnemy.hasHit = false;
+		ball.x = paddlePlayer.x + paddlePlayer.width + 0.5;
+		// ball.vx = -ball.vx;
+		// ball.vr = -ball.vr;
+		
+		// extend paddle length by 20% before map as player rarely hits the ball on the paddle edge
+		
+		var playerAngle = scale(ball.y, (paddlePlayer.y - paddleHeight*0.2), (paddlePlayer.y + paddleHeight + paddleHeight*0.2), 50, -50);
+		console.log('Player Angle: ' + playerAngle);
+		if (Math.sign(playerAngle) === 1) {
+			ball.vx = Math.cos(degToRad(playerAngle)) * ballTragSpeed;
+			ball.vy = -(Math.sin(degToRad(playerAngle)) * ballTragSpeed);
+		}
+		else if (Math.sign(playerAngle) === -1) {
+			ball.vx = Math.cos(degToRad(playerAngle)) * ballTragSpeed;
+			ball.vy = -(Math.sin(degToRad(playerAngle)) * ballTragSpeed);
+		} else {
+			ball.vx = ballTragSpeed;
+			ball.vy = 0;
+		}
 		playPaddleHitSound();
 	}
 
 	if (aabbCollisionDetect(ball, paddleEnemy)) {
-		ball.x = paddleEnemy.x - ball.width;
-		ball.vx = -ball.vx;
-		ball.vr = -ball.vr;
+		paddlePlayer.hasHit = false;
+		paddleEnemy.hasHit = true;
+		ball.x = paddleEnemy.x - ball.width - 0.5;
+		// ball.vx = -ball.vx;
+		// ball.vr = -ball.vr;
+		var enemyAngle = scale(ball.y, (paddleEnemy.y - paddleHeight*0.2), (paddleEnemy.y + paddleHeight + paddleHeight*0.2), 50, -50);
+		console.log('Enemy Angle: ' + enemyAngle);
+		if (Math.sign(enemyAngle) === 1) {
+			ball.vx = -(Math.cos(degToRad(enemyAngle)) * ballTragSpeed);
+			ball.vy = -(Math.sin(degToRad(enemyAngle)) * ballTragSpeed);
+		}
+		else if (Math.sign(enemyAngle) === -1) {
+			ball.vx = -(Math.cos(degToRad(enemyAngle)) * ballTragSpeed);
+			ball.vy = -(Math.sin(degToRad(enemyAngle)) * ballTragSpeed);
+		} else {
+			ball.vx = -ballTragSpeed;
+			ball.vy = 0;
+		}
 		playPaddleHitSound();
 	}
 }
 
 function resetBall() {
+	paddlePlayer.hasHit = false;
+	paddleEnemy.hasHit = false;
 	ball.x = gameWidth / 2 - ballWidth / 2;
 	ball.y = gameHeight / 2 - ballHeight / 2;
 	ball.vx = 0;
@@ -110,6 +143,8 @@ function resetBall() {
 }
 
 function stopBall() {
+	paddlePlayer.hasHit = false;
+	paddleEnemy.hasHit = false;
 	ball.x = gameWidth / 2 - ballWidth / 2;
 	ball.y = gameHeight / 2 - ballHeight / 2;
 	ball.vx = 0;

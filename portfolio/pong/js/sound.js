@@ -38,9 +38,9 @@ function playInitBallSound() {
 	var sound = document.createElement("audio");
 	sound.src = "snd/InitBallSound.ogg";
 	sound.volume = "0.5";
-	sound.addEventListener("ended", function() {
-		document.removeChild(this);
-	}, false);
+	// sound.addEventListener("ended", function() {
+	// 	document.removeChild(this);
+	// }, false);
 	sound.play();
 }
 
@@ -49,9 +49,9 @@ function playWallHitSound() {
 	var sound = document.createElement("audio");
 	sound.src = "snd/WallHitSound.ogg";
 	sound.volume = "0.5";
-	sound.addEventListener("ended", function() {
-		document.removeChild(this);
-	}, false);
+	// sound.addEventListener("ended", function() {
+	// 	document.removeChild(this);
+	// }, false);
 	sound.play();
 }
 
@@ -60,9 +60,9 @@ function playPaddleHitSound() {
 	var sound = document.createElement("audio");
 	sound.src = "snd/PaddleHitSound.ogg";
 	sound.volume = "0.5";
-	sound.addEventListener("ended", function() {
-		document.removeChild(this);
-	}, false);
+	// sound.addEventListener("ended", function() {
+	// 	document.removeChild(this);
+	// }, false);
 	sound.play();
 }
 
@@ -71,9 +71,9 @@ function playPlayerScoreSound() {
 	var sound = document.createElement("audio");
 	sound.src = "snd/PlayerScoreSound.ogg";
 	sound.volume = "0.5";
-	sound.addEventListener("ended", function() {
-		document.removeChild(this);
-	}, false);
+	// sound.addEventListener("ended", function() {
+	// 	document.removeChild(this);
+	// }, false);
 	sound.play();
 }
 
@@ -82,9 +82,9 @@ function playEnemyScoreSound() {
 	var sound = document.createElement("audio");
 	sound.src = "snd/EnemyScoreSound.ogg";
 	sound.volume = "0.5";
-	sound.addEventListener("ended", function() {
-		document.removeChild(this);
-	}, false);
+	// sound.addEventListener("ended", function() {
+	// 	document.removeChild(this);
+	// }, false);
 	sound.play();
 }
 
@@ -93,9 +93,9 @@ function playPlayerWinSound() {
 	var sound = document.createElement("audio");
 	sound.src = "snd/PlayerWinSound.ogg";
 	sound.volume = "0.5";
-	sound.addEventListener("ended", function() {
-		document.removeChild(this);
-	}, false);
+	// sound.addEventListener("ended", function() {
+	// 	document.removeChild(this);
+	// }, false);
 	sound.play();
 }
 
@@ -104,8 +104,8 @@ function playEnemyWinSound() {
 	var sound = document.createElement("audio");
 	sound.src = "snd/EnemyWinSound.ogg";
 	sound.volume = "0.5";
-	sound.addEventListener("ended", function() {
-		document.removeChild(this);
-	}, false);
+	// sound.addEventListener("ended", function() {
+	// 	document.removeChild(this);
+	// }, false);
 	sound.play();
 }

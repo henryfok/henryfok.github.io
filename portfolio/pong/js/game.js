@@ -1,8 +1,3 @@
-// paddle size and move speed
-var paddleWidth = 30;
-var paddleHeight = 120;
-var paddleSpeed = 16;
-
 var scoreMax = 3;
 
 var screen = {
@@ -12,39 +7,10 @@ var screen = {
 }
 
 function rotateScreen() {
-	screen.rx = scale(ball.y, 0, 720, -10, 10);
-	screen.ry = scale(ball.x, 0, 1280, -10, 10);
+	screen.rx = scale(ball.y, 0, 720, -15, 15);
+	screen.ry = scale(ball.x, 0, 1280, -15, 15);
 	// console.log(screen.rx + ":" + screen.ry);
 }
-
-function scale(num, in_min, in_max, out_min, out_max) {
-	return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-}
-
-var paddlePlayer = {
-	// default player1 paddle position data
-	elem: document.querySelector('.paddle-player'),
-	x: 0,
-	y: gameHeight / 2 - paddleHeight / 2,
-	width: paddleWidth,
-	height: paddleHeight,
-	speed: paddleSpeed,
-	moveUp: false,
-	moveDown: false
-};
-
-var paddleEnemy = {
-	// default player2 paddle position data
-	elem: document.querySelector('.paddle-enemy'),
-	x: gameWidth - paddleWidth,
-	y: gameHeight / 2 - paddleHeight / 2,
-	width: paddleWidth,
-	height: paddleHeight,
-	speed: paddleSpeed,
-	moveUp: false,
-	moveDown: false,
-	difficulty: 0.5
-};
 
 function addEventListeners() {
 	window.addEventListener('keydown', function(keycode) {
@@ -73,7 +39,7 @@ function movePlayer() {
 }
 
 function moveEnemy() {
-	if (Math.random() < paddleEnemy.difficulty) {
+	if ((Math.random() < paddleEnemy.difficulty) && !paddleEnemy.hasHit) {
 		paddleEnemy.moveUp = false;
 		paddleEnemy.moveDown = false;
 		if (ball.y + ballHeight < paddleEnemy.y + paddleEnemy.height / 2) {
@@ -102,22 +68,42 @@ function containPaddles() {
 
 function checkWinState() {
 	if (scorePlayer.value === scoreMax) {
-		playPlayerWinSound();
 		console.log('Player win');
-		resetGame();
+		playPlayerWinSound();
+		cancelAnimationFrame(loopReq);
+		stopBall();
+		
+		document.querySelector('.results-title').innerHTML = "You win!";
+		document.querySelector('.results-title').style.color = "#33FF55";
+		document.querySelector('.results-player').innerHTML = scorePlayer.value;
+		document.querySelector('.results-enemy').innerHTML = scoreEnemy.value;
+		document.querySelector('.results').style.visibility = 'visible';
+
+		setTimeout(function() {
+			resetGame();
+		}, 3000);
 	} else if (scoreEnemy.value === scoreMax) {
-		playEnemyWinSound();
 		console.log('Enemy win');
-		resetGame();
+		playEnemyWinSound();
+		cancelAnimationFrame(loopReq);
+		stopBall();
+		
+		document.querySelector('.results-title').innerHTML = "You lose";
+		document.querySelector('.results-title').style.color = "#33BBFF";
+		document.querySelector('.results-player').innerHTML = scorePlayer.value;
+		document.querySelector('.results-enemy').innerHTML = scoreEnemy.value;
+		document.querySelector('.results').style.visibility = 'visible';
+		
+		setTimeout(function() {
+			resetGame();
+		}, 3000);
 	}
 }
 
 function resetGame() {
-	cancelAnimationFrame(loopReq);
 	ballSpeed = ballSpeedStart;
 	scorePlayer.value = 0;
 	scoreEnemy.value = 0;
-	stopBall();
 	init();
 }
 
@@ -125,6 +111,7 @@ var gameStarted = false;
 var musicStarted = false;
 
 function init() {
+	document.querySelector('.results').style.visibility = 'hidden';
 	document.querySelector('.menu').style.visibility = 'visible';
 	if (!musicStarted) {
 		musicStarted = true;
@@ -138,10 +125,20 @@ function init() {
 			start();
 		}
 	});
+	preGameParticles();
+}
+
+var preGameReq;
+
+function preGameParticles() {
+	ballParticles.spawn(Math.floor(Math.random() * gameWidth), Math.floor(Math.random() * gameHeight));
+	preGameReq = requestAnimationFrame(preGameParticles);
+	
 }
 
 function start() {
 	console.log("start");
+	cancelAnimationFrame(preGameReq);
 	document.querySelector('.menu').style.visibility = 'hidden';
 	lowerVolMusic();
 	gameStarted = true;
@@ -162,8 +159,7 @@ function update() {
 	// console.log("update");
 	moveBall();
 	rotateBall();
-	ballParticles.spawn(ball.x + ball.width/2, ball.y + ball.height/2);
-	// rotateScreen()
+	// rotateScreen();
 	movePlayer();
 	moveEnemy();
 	containBall();

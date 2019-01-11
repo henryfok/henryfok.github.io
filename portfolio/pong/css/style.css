@@ -1,5 +1,5 @@
 body {
-	/*background: #111;*/
+	background: #111;
 }
 
 .pong,
@@ -30,14 +30,15 @@ body {
 	left: 22.7%;
 	padding: 2rem 4rem;
 	top: 15%;
+	z-index: 1;
 }
 
 .menu-title {
-	font: 10em/1 'Lato Black';
-	font-size: 10em;
+	font-family: 'Lato', sans-serif;
 	font-weight: 900;
-	letter-spacing: -.025em;
+	font-size: 10em;
 	line-height: 1;
+	letter-spacing: -.025em;
 	margin-bottom: 6rem;
 	position: static;
 }
@@ -64,7 +65,8 @@ body {
 }
 
 .control-icon, .control-action {
-	font: 3em/1 'Lato Black';
+	font-family: 'Lato', sans-serif;
+	font-size: 3em;
 	line-height: 1;
 	position: static;
 }
@@ -79,6 +81,56 @@ body {
 
 .control-action {
 	font-weight: 400;
+}
+
+.results {
+	align-items: center;
+	background: #111;
+	box-shadow: 0 0 0 4px #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	left: 20.5%;
+	padding: 2rem 4rem;
+	top: 15%;
+	z-index: 1;
+}
+
+.results-title {
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+	font-size: 10em;
+	line-height: 1;
+	letter-spacing: -.025em;
+	margin-bottom: 3rem;
+	position: static;
+}
+
+.results-scores {
+	display: flex;
+	position: static;
+}
+
+.results-player, .results-divider, .results-enemy {
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+	font-size: 10em;
+	line-height: 1;
+}
+
+.results-player {
+	color: #33FF55;
+	position: static;
+}
+
+.results-divider {
+	color: #fff;
+	position: static;
+}
+
+.results-enemy {
+	color: #33BBFF;
+	position: static;
 }
 
 .paddle {
@@ -96,7 +148,10 @@ body {
 }
 
 .score {
-	font: 6em/1 'Lato Black';
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+	font-size: 6em;
+	line-height: 1;
 	top: 5px;
 }
 .score-player {
