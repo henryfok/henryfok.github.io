@@ -21,13 +21,21 @@ var ball = {
 	height: ballHeight
 };
 
+function randBallStart() {
+	var randAng = getRandomArbitrary(-50, 50);
+	console.log('Start angle: ' + randAng);
+	ball.vx = Math.cos(degToRad(randAng)) * ballTragSpeed;
+	ball.vy = -(Math.sin(degToRad(randAng)) * ballTragSpeed);
+}
+
 function startBall() {
 	ball.x = gameWidth / 2 - ballWidth / 2;
 	ball.y = gameHeight / 2 - ballHeight / 2;
 	ball.vx = 0;
 	ball.vy = 0;
-	ball.vx = ballSpeed;
-	ball.vy = ballSpeed;
+	// ball.vx = ballSpeed;
+	// ball.vy = ballSpeed;
+	randBallStart();
 }
 
 function moveBall() {
@@ -136,8 +144,9 @@ function resetBall() {
 	ball.r = 0;
 	ball.vr = 0;
 	setTimeout(function() {
-		ball.vx = ballSpeed;
-		ball.vy = ballSpeed;
+		// ball.vx = ballSpeed;
+		// ball.vy = ballSpeed;
+		randBallStart();
 		ball.vr = ballRotateSpeed;
 	}, 1000);
 }

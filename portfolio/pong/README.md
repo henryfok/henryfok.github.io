@@ -1,7 +1,7 @@
 ### Pong
 
 TODO:
-- [ ] Add randomness to AI and starting ball
+- [x] Add randomness to AI and starting ball
 - [x] Menus
 - [ ] Paddle acceleration physics
 - [x] Ball cube rotation

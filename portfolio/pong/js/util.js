@@ -5,3 +5,7 @@ function scale(num, in_min, in_max, out_min, out_max) {
 function degToRad(deg) {
 	return deg * (Math.PI / 180);
 }
+
+function getRandomArbitrary(min, max) {
+	return Math.random() * (max - min) + min;
+}
