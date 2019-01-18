@@ -4,6 +4,7 @@
 		<title>Pong</title>
 		<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"> -->
 	</head>
 	<body>
 		<audio id="gameMusic">
@@ -12,8 +13,23 @@
 		</audio>
 
 		<div class="pong">
-			<div class="paddle paddle-player"></div>
-			<div class="paddle paddle-enemy"></div>
+			<div class="wall wall-top"></div>
+			<div class="wall wall-bottom"></div>
+			<div class="wall wall-left"></div>
+			<div class="wall wall-right"></div>
+			<div class="spike-charge"></div>
+			<div class="paddle paddle-player">
+				<div class="paddle-face paddle-face-top"></div>
+				<div class="paddle-face paddle-face-bottom"></div>
+				<div class="paddle-face paddle-face-right-side"></div>
+				<div class="paddle-face paddle-face-front"></div>
+			</div>
+			<div class="paddle paddle-enemy">
+				<div class="paddle-face paddle-face-top"></div>
+				<div class="paddle-face paddle-face-bottom"></div>
+				<div class="paddle-face paddle-face-left-side"></div>
+				<div class="paddle-face paddle-face-front"></div>
+			</div>
 			<div class="score score-player">0</div>
 			<div class="score score-enemy">0</div>
 			<div class="net"></div>
@@ -23,6 +39,10 @@
 					<span class="menu-title-left">Po</span><span class="menu-title-right">ng</span>
 				</div>
 				<div class="menu-control">
+					<div class="control">
+						<div class="control-icon">Space</div>
+						<div class="control-action">Spike</div>
+					</div>
 					<div class="control">
 						<div class="control-icon">▲ / W</div>
 						<div class="control-action">Up</div>
@@ -44,9 +64,11 @@
 		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.3/velocity.min.js"></script> -->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.5/velocity.min.js"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.5/velocity.ui.min.js"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.ui.min.js"></script>
 		<script src="js/sketch.min.js"></script>
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js"></script> -->
 		<script src="js/util.js"></script>
 		<script src="js/sound.js"></script>
 		<script src="js/score.js"></script>

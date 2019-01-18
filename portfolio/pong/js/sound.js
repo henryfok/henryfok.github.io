@@ -5,7 +5,7 @@ var gameMusic = document.getElementById("gameMusic");
 // theme music
 function playMusic() {
 	gameMusic.load();
-	gameMusic.volume = "0.5";
+	gameMusic.volume = "0.25";
 	gameMusic.loop = true;
 	
 	var playPromise = gameMusic.play();
@@ -60,6 +60,26 @@ function playPaddleHitSound() {
 	var sound = document.createElement("audio");
 	sound.src = "snd/PaddleHitSound.ogg";
 	sound.volume = "0.5";
+	// sound.addEventListener("ended", function() {
+	// 	document.removeChild(this);
+	// }, false);
+	sound.play();
+}
+
+function playPaddleSpikeSound() {
+	var sound = document.createElement("audio");
+	sound.src = "snd/spike-3.ogg";
+	sound.volume = "0.8";
+	// sound.addEventListener("ended", function() {
+	// 	document.removeChild(this);
+	// }, false);
+	sound.play();
+}
+
+function playSlowMoSound() {
+	var sound = document.createElement("audio");
+	sound.src = "snd/SlowMoSound.ogg";
+	sound.volume = "0.8";
 	// sound.addEventListener("ended", function() {
 	// 	document.removeChild(this);
 	// }, false);
