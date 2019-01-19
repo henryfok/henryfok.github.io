@@ -34,7 +34,7 @@ var paddleEnemy = {
 	speed: paddleSpeed,
 	moveUp: false,
 	moveDown: false,
-	difficulty: 0.6,
+	difficulty: 1,
 	hasHit: false
 };
 
@@ -65,7 +65,7 @@ function dischargeSpike() {
 
 function paddleSpike() {
 	if (paddlePlayer.charging === false && paddlePlayer.spikeCharge > 0.8 && paddlePlayer.x < 100) {
-		paddlePlayer.x += 25;
+		paddlePlayer.x += 20;
 		if (paddlePlayer.spikeCharge > 0.8) {
 			paddlePlayer.spike = true;
 		}

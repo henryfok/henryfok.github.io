@@ -173,7 +173,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	left: 12%;
+	left: 14%;
 	padding: 2rem 4rem;
 	top: 15%;
 	z-index: 1;
@@ -230,6 +230,7 @@ body {
 }
 
 .results {
+	visibility: hidden;
 	align-items: center;
 	background: #111;
 	box-shadow: 0 0 0 4px #fff;

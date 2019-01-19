@@ -19,20 +19,7 @@ function rotateScreen() {
 // Space 32
 
 function addEventListeners() {
-	// window.addEventListener('keydown', function(keycode) {
-	// 	if (keycode.code === 'ArrowUp' || keycode.code === 'KeyW') { paddlePlayer.moveUp = true; }
-	// 	if (keycode.code === 'ArrowDown' || keycode.code === 'KeyS') { paddlePlayer.moveDown = true; }
-	// 	if (keycode.code === 'Space') { chargeSpike(); }
-	// });
-
-	// window.addEventListener('keyup', function(keycode) {
-	// 	if (keycode.code === 'ArrowUp' || keycode.code === 'KeyW') { paddlePlayer.moveUp = false; }
-	// 	if (keycode.code === 'ArrowDown' || keycode.code === 'KeyS') { paddlePlayer.moveDown = false; }
-	// 	if (keycode.code === 'Space') { dischargeSpike(); }
-	// });
-
 	window.addEventListener('keydown', function(keycode) {
-		// console.log('down!');
 		keyPressed[keycode.keyCode] = true;
 		if (keyPressed[38]) {
 			paddlePlayer.moveUp = true;
@@ -54,7 +41,6 @@ function addEventListeners() {
 	});
 
 	window.addEventListener('keyup', function(keycode) {
-		// console.log('up!');
 		keyPressed[keycode.keyCode] = false;
 		if (!keyPressed[38]) {
 			paddlePlayer.moveUp = false;
@@ -69,53 +55,6 @@ function addEventListeners() {
 			paddlePlayer.charging = true;
 		}
 	});
-
-	// $("body").keydown(function(keycode) {
-	// 	console.log('down!');
-	// 	keyPressed[keycode.keyCode] = true;
-	// 	if (keyPressed[38]) {
-	// 		paddlePlayer.moveUp = true;
-	// 	}
-	// 	if (keyPressed[40]) {
-	// 		paddlePlayer.moveDown = true;
-	// 	}
-	// 	if (keyPressed[32]) {
-	// 		chargeSpike();
-	// 	}
-	// 	if (keyPressed[38] && keyPressed[32]) {
-	// 		paddlePlayer.moveUp = true;
-	// 		chargeSpike();
-	// 	}
-	// 	if (keyPressed[40] && keyPressed[32]) {
-	// 		paddlePlayer.moveDown = true;
-	// 		chargeSpike();
-	// 	}
-	// }).keyup(function(keycode) {
-	// 	console.log('up!');
-	// 	keyPressed[keycode.keyCode] = false;
-	// 	if (!keyPressed[38]) {
-	// 		paddlePlayer.moveUp = false;
-	// 	}
-	// 	if (!keyPressed[40]) {
-	// 		paddlePlayer.moveDown = false;
-	// 	}
-	// 	if (!keyPressed[32]) {
-	// 		dischargeSpike();
-	// 	}
-	// 	// if (!keyPressed[38] && keyPressed[32]) {
-	// 	// 	paddlePlayer.moveUp = false;
-	// 	// 	chargeSpike();
-	// 	// }
-	// 	// if (!keyPressed[40] && keyPressed[32]) {
-	// 	// 	paddlePlayer.moveDown = false;
-	// 	// 	chargeSpike();
-	// 	// }
-	// 	// if (!keyPressed[38] && !keyPressed[40] && keyPressed[32]) {
-	// 	// 	paddlePlayer.moveUp = false;
-	// 	// 	paddlePlayer.moveDown = false;
-	// 	// 	chargeSpike();
-	// 	// }
-	// });
 }
 
 function chargeSpike() {
@@ -186,10 +125,6 @@ function checkWinState() {
 		document.querySelector('.results-enemy').innerHTML = scoreEnemy.value;
 		
 		showResults();
-		
-		setTimeout(function() {
-			resetGame();
-		}, 3000);
 	} else if (scoreEnemy.value === scoreMax) {
 		console.log('Enemy win');
 		playEnemyWinSound();
@@ -203,17 +138,18 @@ function checkWinState() {
 		document.querySelector('.results-enemy').innerHTML = scoreEnemy.value;
 		
 		showResults();
-		
-		setTimeout(function() {
-			resetGame();
-		}, 3000);
 	}
 }
 
 function showResults() {
 	document.querySelector('.results').style.visibility = 'visible';
-	$('.results').velocity({ opacity: 1 }, "easeInSine");
-	$('.results').velocity({ opacity: 0 }, { delay: 2000 }, "easeOutSine");
+	animateCSS('.results', 'zoomIn', function() {
+		document.querySelector('.results').classList.add('delay-1s');
+		animateCSS('.results', 'zoomOut', function() {
+			document.querySelector('.results').style.visibility = 'hidden';
+			resetGame();
+		});
+	});
 }
 
 function resetGame() {
@@ -227,9 +163,8 @@ var gameStarted = false;
 var musicStarted = false;
 
 function init() {
-	document.querySelector('.results').style.visibility = 'hidden';
-	$('.results').css({ opacity: 0 });
 	document.querySelector('.menu').style.visibility = 'visible';
+	animateCSS('.menu', 'bounceIn', function() {});
 	if (!musicStarted) {
 		musicStarted = true;
 		playMusic();
@@ -255,13 +190,15 @@ function preGameParticles() {
 
 function start() {
 	console.log("start");
-	cancelAnimationFrame(preGameReq);
-	document.querySelector('.menu').style.visibility = 'hidden';
-	lowerVolMusic();
 	gameStarted = true;
-	addEventListeners();
-	startBall();
-	loop();
+	cancelAnimationFrame(preGameReq);
+	animateCSS('.menu', 'bounceOut', function() {
+		document.querySelector('.menu').style.visibility = 'hidden';
+		lowerVolMusic();
+		addEventListeners();
+		startBall();
+		loop();
+	});
 }
 
 var loopReq;
