@@ -43,6 +43,7 @@
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script src="assets/js/formReCaptcha.js"></script>
 </head>
 
 <body>
@@ -326,7 +327,7 @@
 					
 					<div class="contact-form">
 						<!-- <form action="https://app.99inbound.com/api/e/t1c1f3K1" method="POST"> -->
-						<form action="https://briskforms.com/go/e5e4ad7c19a6fad6051a9b4874077121" method="POST">
+						<form action="https://briskforms.com/go/e5e4ad7c19a6fad6051a9b4874077121" onsubmit="return checkCaptcha()" method="POST">
 							<div class="col-md-6 col-sm-12">
 								<input type="text" class="form-control"  name="name" placeholder="Your Name" required>
 							</div>
@@ -342,7 +343,9 @@
 							<div class="col-md-12 text-center">
 								<button type="submit" class="form-control" name="submit">Send Message</button>
 							</div>
-							<div class="g-recaptcha" data-sitekey="6Lfbhp0UAAAAAKPCMxuCAN7f-NgXNoUyVz_3DYZs"></div>
+							<div class="text-center">
+								<div class="g-recaptcha" style="display: inline-block; margin-top: 30px;" data-sitekey="6Lfbhp0UAAAAAKPCMxuCAN7f-NgXNoUyVz_3DYZs" data-callback="capchaFilled"></div>
+							</div>
 						</form>
 					</div>
 
